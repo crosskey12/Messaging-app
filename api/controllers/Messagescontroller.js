@@ -1,5 +1,6 @@
-const Messages=require('../models/Messages')
+const Messages=require('../models/Messages') //Mongoose Schema to store messages 
 
+//Post func to return all messages between sender and reciever from Messages DB
 const msgbyid=(req,res,next) =>{
     const id1 = req.body.senderid
     const id2 = req.body.recieverid
@@ -8,6 +9,7 @@ const msgbyid=(req,res,next) =>{
     .catch(error =>{res.json({message:'An error Occured'})})
 }
 
+//Post func to save new message to Messages DB
 const newmsg=(req,res,next)=>{
     let msg = new Messages({
         senderid:req.body.senderid,

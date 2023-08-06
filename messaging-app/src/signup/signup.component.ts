@@ -19,7 +19,7 @@ export class SignupComponent {
       "password":register.value.Password
     }
     this.userservice.adduser(user).subscribe((data:any) => {
-      alert(data.message)
+      alert(data.message) //If user is registered successfully 
     })
     this.router.navigate(["/login"])
     console.log(user)

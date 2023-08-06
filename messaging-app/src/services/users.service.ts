@@ -7,28 +7,28 @@ import { Injectable } from '@angular/core';
 export class UsersService {
 
   constructor(private httpclient:HttpClient) { }
-  getusers(object:any)
+  getusers(object:any) //Chat page left panel
   {
-    return this.httpclient.post("http://localhost:3000/api/messages/users",object)
+    return this.httpclient.post("http://localhost:3000/api/users",object)
   }
-  getmessages(object:any)
+  getmessages(object:any) //Chat page right panel
   {
-    return this.httpclient.post("http://localhost:3000/api/messages/chat",object)
+    return this.httpclient.post("http://localhost:3000/api/chat",object)
   }
-  newmessage(object:any)
+  newmessage(object:any) //Chat page new message function
   {
-    return this.httpclient.post("http://localhost:3000/api/messages/chatting",object)
+    return this.httpclient.post("http://localhost:3000/api/chatting",object)
   }
-  adduser(object:any)
+  adduser(object:any) //From signup page
   {
-    return this.httpclient.post("http://localhost:3000/api/messages/adduser",object)
+    return this.httpclient.post("http://localhost:3000/api/adduser",object)
   }
-  login(object:any)
+  login(object:any)   //From login page
   {
-    return this.httpclient.post("http://localhost:3000/api/messages/login",object)
+    return this.httpclient.post("http://localhost:3000/api/login",object)
   }
-  logout(object:any)
+  logout(object:any)  //From chat page
   {
-    return this.httpclient.post("http://localhost:3000/api/messages/logout",object)
+    return this.httpclient.post("http://localhost:3000/api/logout",object)
   }
 }

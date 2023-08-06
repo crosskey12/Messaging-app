@@ -12,7 +12,7 @@ import { UsersService } from 'src/services/users.service';
 export class LoginComponent {
   constructor(private userservice:UsersService,private router:Router) {}
  
-  loginhere(object:any)
+  loginhere(object:any) //Set the logged in user data and reroutes 
   {
     this.userservice.login(object).subscribe((data:any) => {
       if(data.user.name)
@@ -23,7 +23,7 @@ export class LoginComponent {
       }
       else
       {
-        alert(data.message)
+        alert(data.message) //If login insuccessful appropriate message is declared
       }
     })
   }
@@ -38,8 +38,6 @@ export class LoginComponent {
       "emailid":login.value.emailid,
       "password":login.value.Password
     }
-    console.log(object)
-    
     this.loginhere(object)
   }
 }

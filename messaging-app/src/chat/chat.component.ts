@@ -10,51 +10,50 @@ import { UsersService } from 'src/services/users.service';
 })
 export class ChatComponent {
   constructor(private userservice:UsersService, private router:Router){}
-selected={name:" ",
-//avatar:" ",
+selected={name:" ", //Setting selected user data null initially
 emailid:" ",
-//phno:""
 }
 
-contacts :any;
-messages1: any; 
-ourid1=ourid
+contacts :any; //object to store fetched data
+messages1: any; //object to store fetched data
+ourid1=ourid //object to store frontend data
 
 
-getusershere(object:any)
+getusershere(object:any) //Call service function and sets user list
 {
   this.userservice.getusers(object).subscribe((data:any) => {
     this.contacts=data.users
   })
 }
-getmessagehere(object:any)
+getmessagehere(object:any) //Calls service function and sets Messages list
 {
   this.userservice.getmessages(object).subscribe((data:any) => {
     this.messages1=data.messages
   })
 }
-sendmessage(object:any)
+sendmessage(object:any) //Calls service function to save new message 
 {
   this.userservice.newmessage(object).subscribe((data:any) => {
     this.getmessagehere({senderid:ourid.name,
       recieverid:this.selected.name})
     })
 }
-//contacts = contactsdb
+
 x=this.getusershere(ourid)
-//messages1= messagesdb
-  selection(con:any):void{
+
+//Function to change data in right panel based on user selection in left panel 
+selection(con:any):void{
       this.selected.name=con.name
-      //this.selected.avatar=con.avatar
       this.selected.emailid=con.emailid
-      //this.selected.phno=con.phno
       const object={
           senderid:ourid.name,
           recieverid:this.selected.name 
       }
-      this.getmessagehere(object)
+      this.getmessagehere(object)   
 
   }
+
+  //For entering new message
   submit(msg:any)
   {
     const newmessage={
@@ -64,10 +63,6 @@ x=this.getusershere(ourid)
     }
     msg.resetForm();
     this.sendmessage(newmessage)
-    //console.log(newmessage)
-    //alert("Message sent successfully")
-
-
   }
 
   logout()

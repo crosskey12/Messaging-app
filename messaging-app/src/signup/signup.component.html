@@ -1,76 +1,16 @@
-<!--<div class = "container"> 
-    <h1>Register</h1>
-    <form #register="ngForm" (ngSubmit)="submit(register)">
-        <div class="login-form-group">
-            <label for="firstname">Firstname : </label>
-            <input type="text" name="firstname" class = "login-form-group" ngModel><br><br>
-        </div>
-        <div class="login-form-group">
-            <label for="lastname">Lastname : </label>
-            <input type="text" name="lastname" class = "login-form-group" ngModel><br><br>
-        </div>
-        <div class="login-form-group">
-            <label for="emailid">Email : </label>
-            <input type="email" name="emailid" class = "login-form-group" ngModel><br><br>
-        </div>
-        <div class="login-form-group">
-            <label for="Password">Password : </label>
-            <input #pass="ngModel" type="password" name="Password" class = "login-form-group" ngModel><br><br>
-        </div>
-        <div class="login-form-group">
-            <label for="ConfirmPassword">Confirm Password : </label>
-            <input #cpass="ngModel" type="password" name="ConfirmPassword" class = "login-form-group" ngModel><br><br>
-        </div>
-        <div *ngIf = "pass.value != cpass.value">
-            <p>
-                Passwords Do not match
-            </p>
-        </div>
-        <button class="login btn-login" type="submit">Register</button>
-              <p>Have an account? <a href="#!" class="link-info" routerLink="/login" routerLinkActive="active">Login here</a></p>
-    </form>
-</div>
--->
-<!--<div class = "container"> 
-    <h1>Login</h1>
-    <form #login="ngForm" (ngSubmit)="submit(login)">
-        <div class="login-form-group">
-            <label for="emailid">Email : </label>
-            <input type="email" name="emailid" class = "login-form-group" ngModel><br><br>
-        </div>
-        <div class="login-form-group">
-            <label for="Password">Password : </label>
-            <input type="password" name="Password" class = "login-form-group" ngModel><br><br>
-        </div>
-        <button class="login btn-login" type="submit">Login</button>
-        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-              <p>Don't have an account? <a href="#!" class="link-info" routerLink="/signup" routerLinkActive="active">Register here</a></p>
-    </form>
-</div>-->
-<style>
-  #navbarc
-  {
-    padding: 4px;
-  }
-  </style>
-  <nav class="navbar navbar-dark bg-dark" >
-  <a class="navbar-brand" href="#">
-  <img id="navbarc" src="/favicon.ico" width="40" height="5%" class="d-inline-block align-items-center">   Jchat
-  </a>
-  </nav>
+<html>
+  <body>
+    <nav class="navbar navbar-dark bg-dark" >
+      <a class="navbar-brand" href="#">
+        <img id="navbarc" src="/favicon.ico" width="40" height="5%" class="d-inline-block align-items-center">   Jchat
+      </a>
+    </nav>
 <section class="vh-100">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-6 text-black">
-  
-          <!--<div class="px-5 ms-xl-4">
-            <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-            <span class="h2 fw-bold mb-0"></span>
-          </div>-->
-  
-          <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-  
-            <form style="width: 23rem;" #register="ngForm" (ngSubmit)="onsubmit(register)">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+          <form style="width: 23rem;" #register="ngForm" (ngSubmit)="onsubmit(register)">
   
               <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Signup</h3>
 
@@ -98,7 +38,7 @@
                 <p class="warning">
                     Passwords Do not match
                 </p>
-            </div>
+              </div>
   
               <div class="pt-1 mb-4">
                 <button class="btn btn-info btn-lg btn-block" type="submit" >Signup</button>
@@ -107,15 +47,11 @@
               <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
               <p>Have an account? <a href="#!" class="link-info" routerLink="/login" routerLinkActive="active">Login here</a></p>
   
-            </form>
-  
-          </div>
-  
-        </div>
-        <!--<div class="col-sm-6 px-0 d-none d-sm-block">
-          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-            alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
-        </div>-->
+          </form>
+        </div> 
       </div>
     </div>
-  </section>
+  </div>
+</section>
+</body>
+</html>
